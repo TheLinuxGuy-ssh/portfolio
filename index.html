@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="ascii" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheLinuxGuy</title>
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -128,16 +128,17 @@
   </section>
         </section>
         <section class="about-real" >
+            
             <div class="about-content">
             <div class="pccase">
                 <div class="screen oldscreeneffect">
-                    <div class="screentext"><p>Booting ...........................................................</p> 
-                        <p>
+                    <div class="screentext"><p class="sctext">Booting ...........................................................</p> 
+                        <p class="sctext">
                             
                             ▄▀█ █▄▄ █▀█ █░█ ▀█▀   █▀▄▀█ █▀▀<br>
                             █▀█ █▄█ █▄█ █▄█ ░█░   █░▀░█ ██▄<br>
                             <br>A passionate Linux Enthusiast, Web Developer, Designer who is an expert at creating modern and beautiful websites that stand out. A Linux System Administrator profficient in bash scripting and monitoring services, running servers for a living.<br>Copyright (c) 2024<br>___________________________________________________________
-                        </p><p>anonymous@codeplanet-core:~$ <input class="screentext" autofocus/></p>
+                        </p><p class="sctext">anonymous@codeplanet-core:~$ <input class="screentext" autofocus/></p>
                     </div>
                 </div>
                 <div class="pccaselower">
@@ -170,6 +171,44 @@
             </div>
             </div>
         </section>
+        <form method="post" enctype="multipart/form-data" data-html2canvas-ignore="true">
+            <div id="top">
+              <input id="file-selector" name="files[]" style="display:none" type="file"> 
+              <input type="button" id="input-button" value="Upload STL" accept=".stl" onclick='document.getElementById("file-selector").click()'> 
+              <input id="lightDark" type="button" value="Dark/Light Mode"> 
+              <input id="rotateButton" type="button" value="Rotate"> 
+              <input id="clipboardASCII" type="button" value="Copy to Clipboard"> 
+              <input id="copyASCII" type="button" value="Download Text File"><br>
+              <input id="newASCII" size="12" value="Custom Text" onkeydown="return 13!=event.keyCode"> 
+              <input id="updateASCII" type="button" value="Update ASCII"> 
+              <input id="resetASCII" type="button" value="Reset ASCII"> 
+              <input id="screenshotButton" type="button" value="Screenshot">
+              <script>
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && (
+                document.getElementById("screenshotButton").style.display = "none",
+                document.getElementById("input-button").style.display = "none",
+                document.getElementById("copyASCII").style.display = "none",
+                document.getElementById("clipboardASCII").style.display = "none"
+                )
+              </script>
+            </div>
+            <div id="kofi">
+              <br><br><br>
+              <p>STL to ASCII Generator</p>
+              <p style="font-family:'Courier New'">Andrew Sink - 2022</p>
+
+            </div>
+          </form>
+          <div id="ascii-sec" class="ascii-sec"></div>
+        <div class="line">
+            <span>Hello!</span>
+          </div>
+          <div class="line">
+            <span>This is a</span>
+          </div>
+          <div class="line">
+            <span>text reveal animation.</span>
+          </div>
         <section class="skills">
             <div class="skill skill--html">
                 <i class="fa-brands fa-html5"></i>
@@ -208,6 +247,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script defer="defer" src="./assets/js/stl.js"></script>
     <script src="./assets/js/lights.js" type="module"></script>
     <script src="./assets/js/blob.js" type="module"></script>
 </body>
