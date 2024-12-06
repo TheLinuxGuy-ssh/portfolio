@@ -759,54 +759,8 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 	opacity: 0.9;
   }
   
-  .pccase, .cpu {
-	background: #B6B6B6;
-	left: 0;
-	right: 0;
-	top: -120px;
-	bottom: 0;
-	width: 650px;
-	height: 600px;
-	margin: auto;
-	border: 5px solid #3D3B3B;
-	box-shadow: 0px 0px 0px 10px #B6B6B6;
-	border-radius: 5px;
-  }
-  .pccase .pccaselower, .cpu .pccas	position: fixed;elower {
-	height: 80px;
-	margin: 10px 0px 10px 0px;
-	padding: 15px 20px 20px 10px;
-	border-top: 5px solid #3D3B3B;
-	font-size: 50pt;
-	font-weight: bold;
-  }
-  .pccase .pccaselower .pccaseonoffbutton, .cpu .pccaselower .pccaseonoffbutton {
-	float: right;
-	width: 50px;
-	height: 50px;
-	margin: 5px 35px 0px 0px;
-	border: 3px solid black;	position: fixed;
-	border-radius: 50%;
-  }
-  .pccase .pccaselower .innercirclecase, .cpu .pccaselower .innercirclecase {
-	background-color: gray;
-	width: 50%;
-	height: 50%;
-	margin: auto;
-	margin-top: 7px;	position: fixed;
-	border: 5px solid black;
-	border-radius: 50%;
-  }
-  .pccase .pccaselower .innerlinecase, .cpu .pccaselower .innerlinecase {
-	background-color: black;
-	width: 3px;
-	height: 40px;
-	margin: auto;
-	margin-top: -20px;
-	border-radius: 50%;
-  }
-  
   .screen {
+	width: 50%;
 	height: 450px;
 	margin: 35px 35px 0px 35px;
 	border: 3px solid #222121;
@@ -819,89 +773,12 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 	text-shadow: 0px 0px 10px #FFFFFF;
 	opacity: 0.6;
   }
+
+  .about-real {
+	margin: 15em 0;
+  }
   
-  .cpu {
-	top: 720px;
-	width: 850px;
-	height: 171.4285714286px;
-	border-radius: 3px;
-	border: 5px solid #3D3B3B;
-	box-shadow: 0px 0px 0px 9px #B6B6B6;
-	border-radius: 1px;
-  }
-  .cpu .pcbaseleft, .cpu .pcbaseright {
-	float: left;
-	width: 425px;
-	height: 171.4285714286px;
-  }
-  .cpu .logo {
-	float: left;
-	height: 141.4285714286px;
-	padding: 10px 20px 20px 10px;
-	font-size: 50pt;
-	font-weight: bold;
-  }
-  .cpu .onoffbutton {
-	float: right;
-	width: 85.7142857143px;
-	height: 85.7142857143px;
-	margin: 15px 35px 0px 0px;
-	border: 1px solid black;
-	border-radius: 50%;
-  }
-  .cpu .onoffbutton .innercircle {
-	width: 50%;
-	height: 50%;
-	margin: 10px 25px 10px 10px;
-	border: 12px solid black;
-	border-radius: 50%;
-	text-align: center;
-	font-size: 60pt;
-  }
-  .cpu .onoffbutton .innerline {
-	background-color: black;
-	width: 10px;
-	height: 60px;
-	margin: auto;
-	margin-top: -30px;
-	border-radius: 50%;
-  }
-  .cpu .onoffled {
-	background-color: gray;
-	float: right;
-	margin: 20px 54px 20px 30px;
-	width: 50px;
-	height: 15px;
-	border: 1px solid #000000;
-  }
-  .cpu .pcbaseright {
-	float: right;
-  }
-  .cpu .disquette {
-	background-color: #3E3D3D;
-	width: 390px;
-	height: 65px;
-	margin: auto;
-	margin-top: 7px;
-	border: 5px solid #848484;
-	border-radius: 7px;
-  }
-  .cpu .disquette .disqueteline {
-	background-color: black;
-	width: 370px;
-	height: 10px;
-	margin: auto;
-	margin-top: 30px;
-  }
-  .cpu .disquette .disquetesquare {
-	background-color: #111111;
-	width: 80px;
-	height: 55px;
-	margin: auto;
-	margin-top: -35px;
-	opacity: 0.5;
-	border-radius: 10px;
-  }
+  
   
   .about-real input {
 	opacity: 1 !important;
@@ -921,7 +798,8 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
   }
 
   .about-content {
-	transform: scale(0.6);
+	transform: none;
+
   }
 
 

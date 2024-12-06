@@ -289,31 +289,6 @@ gsap.set(".server", { x: '50%' });  // Set initial position for element2
     y: '7.5%'
   });
 
-  const t3 = gsap.timeline({
-    scrollTrigger: {
-    trigger: ".about-real",
-
-    end: "100%",
-    start: "top center"
-  },
-
-  smoothChildTiming: true
-  });
-  t3.from(".sctext", 1.8, {
-    y: 100,
-    ease: "power4.out",
-    start: "bottom bottom",
-    skewY: 7,
-    scrub: 0,
-    stagger: {
-      amount: 0.3
-    }
-  })
-  gsap.set(".about-content", { scale: '0.8' });
-  t3.to(".about-content", { 
-    scale: '0.6'
-  });
-
   const t0 = gsap.timeline({
     scrollTrigger: {
     trigger: ".hero",
@@ -327,8 +302,28 @@ gsap.set(".server", { x: '50%' });  // Set initial position for element2
   
   gsap.set(".ascii-sec", {x: '0', y: '0' });  // Set initial position for element1
   t0.to(".ascii-sec", {
-    x: '50%', 
-    y: '7.5%',
+    y: '20%',
+    scale: '1.3',
+    opacity: '0.5',
+  });
+
+
+  const t00 = gsap.timeline({
+    scrollTrigger: {
+    trigger: ".about-real",
+      scrub: 1,
+    end: "10vh",
+    start: "top bottom"
+  },
+
+  smoothChildTiming: true
+  });
+  
+  gsap.set(".ascii-sec", {x: '0' });  // Set initial position for element1
+  t00.to(".ascii-sec", {
+    x: '25%',
+    scale: '1',
+    opacity: '1',
   });
 
   
