@@ -106,7 +106,26 @@ span {
 	opacity: 0;
 	max-width: 0;
   }
-  
+  .head-logo {
+    position: fixed;
+    top: 2em;
+    left: 2em;
+    width: 5em;
+    height: 5em;
+    z-index: 99999999999999999999999999999999999999;
+    border-radius: 50%;
+  }
+  .head-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  #logo {
+    transition: 0.5s top;
+  }
+  #logo.scrolled {
+    top: 5em;
+  }
 
   .header {
 	width: 500px;
@@ -115,7 +134,7 @@ span {
 	bottom: 1em;
 	left: 50%;
 	transform: translateX(-50%);
-	border-radius: 4em;
+	border-radius: 0.5em;
 	transition: 0.5s all cubic-bezier(.68, -0.25, .265, 1.25);
 	background-color: transparent;
 	z-index: 1000000000 !important;
@@ -838,27 +857,7 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 	box-sizing: border-box;
   }
   
-  .skills {
-	width: 100%;
-	height: 100vh;
-  }
-	  
-
-  .skills .skill {
-	border: 1px solid #619c54;
-	width: 3em;
-	height: 3em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 3em;
-  }
-  .skill--html {
-	color: orangered;
-  }
-  .skill--react {
-	color: #06bcee;
-  }
+  
 
 
   .line{
@@ -882,3 +881,245 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
     left: 0;
     outline: none;
 }
+
+.skills-sec {
+  width: 100%;
+  height: 100vh;
+}
+.skills-sec .card {
+
+  margin: 2em 12em;
+  padding: 2em;
+  color: #fff;
+  text-align: center;
+  border-radius: 1em;
+  font-family: "Pro";
+}
+.card-num {
+  font-size: 1.5em;
+}
+.skill-glow {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.skills-sec section
+{
+	float:left;
+	margin-left:10px;
+	width:100px;
+}
+.skills-sec section:hover{cursor:pointer;}
+.skills-sec ul
+{
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
+.skills-sec li
+{
+	margin-bottom:2px;
+	padding:5px;
+	background:#ccc;
+	position:relative;
+	-webkit-transition:all 2s ease;
+	-moz-transition:all 2s ease;
+	transition:all 2s ease;
+  
+}
+.skills-sec ul li:last-child
+{
+	height:100px;
+	background:#31333F;
+	text-align:center;
+	-webkit-transition:all 2s ease;
+	-moz-transition:all 2s ease;
+	transition:all 2s ease;
+}
+.skills-sec section ul li:last-child{position:relative;}
+.skills-sec section:nth-child(1) ul li:nth-child(10){ background:#31333F;}
+.skills-sec section:nth-child(1) ul li:nth-child(9){ background:#31333F;}
+.skills-sec section:nth-child(1) ul li:nth-child(8){ background:#31333F;}
+.skills-sec section:nth-child(1) ul li:nth-child(7){ background:#31333F;}
+.skills-sec section:nth-child(1) ul li:nth-child(6){ background:#31333F;}
+.skills-sec section:nth-child(1) ul li:nth-child(5){ background:#31333F;}
+.skills-sec section:nth-child(1) ul li:nth-child(4){ background:#31333F;}
+.skills-sec section:nth-child(2) ul li:nth-child(10){ background:#31333F;}
+.skills-sec section:nth-child(2) ul li:nth-child(9){ background:#31333F;}
+.skills-sec section:nth-child(2) ul li:nth-child(8){ background:#31333F;}
+.skills-sec section:nth-child(2) ul li:nth-child(7){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(10){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(9){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(8){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(7){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(6){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(5){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(4){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(3){ background:#31333F;}
+.skills-sec section:nth-child(3) ul li:nth-child(2){ background:#31333F;}
+.skills-sec section:nth-child(4) ul li:nth-child(10){ background:#31333F;}
+.skills-sec section:nth-child(4) ul li:nth-child(9){ background:#31333F;}
+.skills-sec section:nth-child(4) ul li:nth-child(8){ background:#31333F;}
+.skills-sec section:nth-child(4) ul li:nth-child(7){ background:#31333F;}
+.skills-sec section:nth-child(4) ul li:nth-child(6){ background:#31333F;}
+
+i{color:#fff; font-size:3em;position:relative;top:25px;display:block;	-webkit-transition:all 2s ease;	-moz-transition:all 2s ease;
+	transition:all 2s ease;}
+.skills-sec section:nth-child(1):hover li:nth-child(11) i
+{
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
+	color:#31333F;
+}
+.skills-sec section li:last-child:after
+{
+	position:absolute;
+    display:block;
+    left:22px;
+	bottom:-0px;
+	color:#31333F;
+	z-index:-1;
+	font-weight:bold;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+    -webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;	
+}
+.skills-sec section:nth-child(1) li:nth-child(11):after{content:"HTML5";}
+.skills-sec section:nth-child(2) li:nth-child(11):after{content:"CSS3";left:27px;}
+.skills-sec section:nth-child(3) li:nth-child(11):after{content:"Desktop";}
+.skills-sec section:nth-child(4) li:nth-child(11):after{content:"Mobile";left:27px;}
+.skills-sec section:hover li:last-child:after
+{
+	bottom:15px;
+	z-index:1;
+    -webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(11) {
+	background:#E34C26;
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+	color:#31333F;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(10) {
+	background:#E34C26;
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(9) {
+	background:#E34C26;
+	-webkit-transition:all 1.5s ease;
+	-moz-transition:all 1.5s ease;
+	transition:all 1.5s ease;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(8) {
+	background:#E34C26;
+	-webkit-transition:all 2s ease;
+	-moz-transition:all 2s ease;
+	transition:all 2s ease;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(7) {
+	background:#E34C26;
+	-webkit-transition:all 2.5s ease;
+	-moz-transition:all 2.5s ease;
+	transition:all 2.5s ease;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(6) {
+	background:#E34C26;
+	-webkit-transition:all 3s ease;
+	-moz-transition:all 3s ease;
+	transition:all 3s ease;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(5) {
+	background:#E34C26;
+	-webkit-transition:all 3.5s ease;
+	-moz-transition:all 3.5s ease;
+	transition:all 3.5s ease;
+}
+.skills-sec section:nth-child(1):hover li:nth-child(4) {
+	background:#E34C26;
+	-webkit-transition:all 4s ease;
+	-moz-transition:all 4s ease;
+	transition:all 4s ease;
+}
+
+.skills-sec section:nth-child(2):hover li:nth-child(11) {
+	background:#0092BF;
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+.skills-sec section:nth-child(2):hover li:nth-child(11) i
+{
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
+	color:#31333F;
+}
+.skills-sec section:nth-child(2):hover li:nth-child(10) {
+	background:#0092BF;
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
+}
+.skills-sec section:nth-child(2):hover li:nth-child(9) {
+	background:#0092BF;
+	-webkit-transition:all 1.5s ease;
+	-moz-transition:all 1.5s ease;
+	transition:all 1.5s ease;
+}
+.skills-sec section:nth-child(2):hover li:nth-child(8) {
+	background:#0092BF;
+	-webkit-transition:all 2s ease;
+	-moz-transition:all 2s ease;
+	transition:all 2s ease;
+}
+.skills-sec section:nth-child(2):hover li:nth-child(7) {background:#0092BF;-webkit-transition:all 2.5s ease;-moz-transition:all 2.5s ease;transition:all 2.5s ease;}
+
+.skills-sec section:nth-child(3):hover li:nth-child(11) {
+	background:#f00;
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+.skills-sec section:nth-child(3):hover li:nth-child(11) i
+{
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
+	color:#31333F;
+}
+.skills-sec section:nth-child(3):hover li:nth-child(10) {background:#f00;-webkit-transition:all 0.5s ease;-moz-transition:all 0.5s ease;transition:all 0.5s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(9) {background:#f00;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(8) {background:#f00;-webkit-transition:all 1.5s ease;-moz-transition:all 1.5s ease;transition:all 1.5s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(7) {background:#f00;-webkit-transition:all 2s ease;-moz-transition:all 2s ease;transition:all 2s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(6) {background:#f00;-webkit-transition:all 2.5s ease;-moz-transition:all 2.5s ease;transition:all 2.5s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(5) {background:#f00;-webkit-transition:all 3s ease;-moz-transition:all 3s ease;transition:all 3s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(4) {background:#f00;-webkit-transition:all 3.5s ease;-moz-transition:all 3.5s ease;transition:all 3.5s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(3) {background:#f00;-webkit-transition:all 4s ease;-moz-transition:all 4.5s ease;transition:all 4.5s ease;}
+.skills-sec section:nth-child(3):hover li:nth-child(2) {background:#f00;-webkit-transition:all 5s ease;-moz-transition:all 5s ease;transition:all 5s ease;}
+
+.skills-sec section:nth-child(4):hover li:nth-child(11) {
+	background:#027844;
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+.skills-sec section:nth-child(4):hover li:nth-child(11) i
+{
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
+	color:#31333F;
+}
+.skills-sec section:nth-child(4):hover li:nth-child(10) {background:#027844;-webkit-transition:all 0.5s ease;-moz-transition:all 0.5s ease;transition:all 0.5s ease;}
+.skills-sec section:nth-child(4):hover li:nth-child(9) {background:#027844;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease;}
+.skills-sec section:nth-child(4):hover li:nth-child(8) {background:#027844;-webkit-transition:all 1.5s ease;-moz-transition:all 1.5s ease;transition:all 1.5s ease;}
+.skills-sec section:nth-child(4):hover li:nth-child(7) {background:#027844;-webkit-transition:all 2s ease;-moz-transition:all 2s ease;transition:all 2s ease;}
+.skills-sec section:nth-child(4):hover li:nth-child(6) {background:#027844;-webkit-transition:all 2.5s ease;-moz-transition:all 2.5s ease;transition:all 2.5s ease;}

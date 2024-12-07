@@ -79,17 +79,20 @@ class TextScramble {
 
 
   const header = document.querySelector(".header")
+  const head = document.querySelector("#logo")
 const pod = document.querySelector(".pod")
 const scrollChange = 1
 const globe = 350
 const add_class_on_scroll = () => header.classList.add("scrolled")
+const add_class_on_scrol = () => head.classList.add("scrolled")
+const remove_class_on_scrol = () => head.classList.remove("scrolled")
 const remove_class_on_scroll = () => header.classList.remove("scrolled")
 
 window.addEventListener('scroll', function() { 
   scrollpos = window.scrollY;
 
-  if (scrollpos >= scrollChange) { add_class_on_scroll() }
-  else { remove_class_on_scroll() }
+  if (scrollpos >= scrollChange) { add_class_on_scroll(), add_class_on_scrol() }
+  else { remove_class_on_scroll(), remove_class_on_scrol() }
 })
 
 $(function() {
@@ -326,12 +329,42 @@ gsap.set(".server", { x: '50%' });  // Set initial position for element2
     opacity: '1',
   });
 
+  const t000 = gsap.timeline({
+    scrollTrigger: {
+    trigger: ".skills-sec",
+      scrub: 1,
+    end: "5vh",
+    start: "top bottom"
+  },
+
+  smoothChildTiming: true
+  });
+  t000.to(".ascii-sec", {
+    y: '10%',
+    x: '0',
+  
+  });
+// Select the logo
+const logo = document.getElementById("logo");
+
+// Define the total scrollable height of the document
+const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+// Listen to the scroll event
+window.addEventListener("scroll", () => {
+    // Calculate the current scroll position as a percentage of total scrollable height
+    const scrollPercentage = window.scrollY / totalHeight;
+
+    // Calculate the rotation based on the scroll percentage (rotate 360 degrees over the full scroll)
+    const rotation = scrollPercentage * 360;
+
+    // Update the logo's rotation using GSAP
+    gsap.to(logo, { rotation: rotation });
+});
+
+
   
   // optionally return a cleanup function
   return () => console.log("cleanup");
 });
-
-
-
-
 
