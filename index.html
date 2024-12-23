@@ -132,7 +132,7 @@
         <section class="about-real" >
             
             <div class="about-content">
-            <div class="pccase">
+            <div class="pccase" data-aos="fade-right" data-aos-delay="0.5">
                 <div class="screen oldscreeneffect">
                     <div class="screentext"><p class="sctext">Booting ...........................................................</p> 
                         <p class="sctext">
@@ -211,8 +211,7 @@
                       <a href="#" class="js-create_video ag-create_item">
                         <video muted="" playsinline="">
                           <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/dollar-xpa-r.mp4" type="video/mp4">
-                          <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/dollar-xpa-r.webm" type="video/webm">
-                        </video>
+                          </video>
                 
                         <svg viewBox="0 0 411 431" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                           <polygon class="cls-1" points="0.5 430.5 340.31 430.5 410.5 361.03 410.5 0.5 0.5 0.5 0.5 430.5"></polygon>
@@ -295,16 +294,41 @@
                       </div>
                   </div>
             </div>
+            <div id="output"></div>
+<video id="input" autoplay muted loop playsinline crossorigin="anonymous">
+  <!-- Source: https://pixabay.com/es/videos/ne%C3%B3n-terreno-retro-resumen-mundo-21368/ 🔥  -->
+  <source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_3840_2160_30fps.mp4" type="video/mp4">
+</video>
+
+<canvas id="prerender" width="96" height="32"></canvas>
+            <footer class="footer">
+                <div class="work-together">
+                    <h1 style="text-align: center; backdrop-filter: blur(0px);">
+                        Let's Talk.
+                    </h1>
+                </div>
+                <div class="footer-links">
+                    <a target="_blank" href="https://www.instagram.com/thelinuxguy.ssh/" >
+                    <button class="social-btn"><span>Instagram</span></button>
+                    </a>
+                    <a target="_blank" href="https://github.com/TheLinuxGuy-ssh">
+                        <button class="social-btn"><span>GitHub</span></button>
+                        </a>
+                        <a target="_blank" href="mailto:mr.linux.0@protonmail.com">
+                            <button class="social-btn"><span>Email</span></button>
+                            </a>
+                </div>
+            </footer>
     </div>
     </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tweakpane@3.0.7/dist/tweakpane.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script defer="defer" src="./assets/js/stl.js"></script>
+    <script src="./assets/js/stl.js" defer="defer"></script>
     <script src="./assets/js/lights.js" type="module"></script>
     <script src="./assets/js/blob.js" type="module"></script>
 </body>
