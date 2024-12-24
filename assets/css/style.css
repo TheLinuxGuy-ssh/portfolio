@@ -19,6 +19,8 @@ html {
 
 body {
     background-color: #000000;
+	position: relative;
+	overflow-x: hidden;
     height: 100%;
 }
 
@@ -116,7 +118,7 @@ span {
     left: 2em;
     width: 5em;
     height: 5em;
-    z-index: 99999999999999999999999999999999999999;
+    z-index: 9999999;
     border-radius: 50%;
   }
   .head-logo img {
@@ -163,7 +165,7 @@ span {
 }
 .header .navbar .nav-item,
 .header .navbar .nav-item .nav-link {
-		padding: 1em 1.5em !important;
+		padding: 3vw 2vw !important;
 		border-radius: 0.5em;
 }
 .header .navbar .nav-item {
@@ -171,7 +173,7 @@ span {
 }
 .header.scrolled .navbar .nav-item,
 .header.scrolled .navbar .nav-item .nav-link {
-		padding: calc(1em + 4px) 1em !important;
+		padding: calc(1em + 4px) 1vw !important;
 		border-radius: 0.5em;
 }
 .header .navbar .nav-item .nav-link:hover {
@@ -308,13 +310,20 @@ Hero
 
 .hero-title {
     color: white;
-    font-size: 6em;
+    font-size: 6vw;
     font-family: Pro;
     text-shadow: 0 0 20px rgba(255,255,255,0.75);
 	user-select: none;
 	text-align: center;
 }
+@media screen and (max-width: 1024px) { 
 
+	.hero-title {
+		font-size: 10vw;
+	}
+  
+  }
+  
   
 @keyframes neonGlow {
     0% {
@@ -491,7 +500,6 @@ Hero
 	}
   }
   .loader {
-	display: none;
 	position: fixed;
 	top: 0;
 	color: red;
@@ -499,7 +507,7 @@ Hero
 	width: 100%;
 	height: 100%;
 	background-color: #212121;
-	z-index: 1000000000000000000000000000000000000000000000000;
+	z-index: 99999999999999999 !important;
 	animation: 12s loaded ease-in-out forwards;
   }
   @keyframes loaded {
@@ -651,6 +659,12 @@ Hero
 	
 	font-family: ProMono;
 }
+@media screen and (max-width: 1024px) {
+	.caption {
+		text-align: center;
+		margin: 0 1em;
+	}
+}
 
 
 .about {
@@ -737,10 +751,15 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 
 .about .bg {
     width: 100%; height: 100%;
-    max-width: 44em;
+    max-width: 44vw;
     position: absolute;
 	animation: 4.5s flicker infinite;
 	animation-delay: 2s;
+}
+@media screen and (max-width: 1024px) { 
+	.about .bg {
+		max-width: 80vw;
+	}
 }
 .about .bg > div {
     position: absolute;
@@ -784,7 +803,6 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 	background-repeat: repeat-y;
 	opacity: 0.9;
   }
-  
   .screen {
 	width: 50%;
 	height: 450px;
@@ -793,6 +811,16 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 	border-radius: 20px;
 	box-shadow: inset 0px 0px 10px 10px #000;
   }
+  @media screen and (max-width: 1024px) { 
+	.oldscreeneffect {
+		background: radial-gradient(ellipse at center, #0000007e 50%, #003d0288 100%);
+	}
+	.screen {
+		width: 90%;
+		margin: 5%;
+	}
+}
+  
   .screen .screentext {
 	color: #00FE1A;
 	margin: 20px 30px;
@@ -902,6 +930,11 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
   border-radius: 1em;
   font-family: "Pro";
 }
+@media screen and (max-width: 1024px) { 
+	.skills-sec .card {
+		margin: 2em 2vw;
+	}
+}
 .card-num {
   font-size: 1.5em;
 }
@@ -972,6 +1005,20 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 	height: 100%;
 	transition: 0.2s all;
 }
+
+@media screen and (max-width: 768px) { 
+
+	.projects .project{
+	  flex-direction: column;
+	  flex-direction: column-reverse;
+	  margin: 2em 0;
+	}
+	.projects .project .project-no {
+		display: none;
+	}
+  
+  }
+  
 
   .footer {
 	width: 90%;
@@ -1061,6 +1108,20 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
 	background: #00FE1A;
   }
 
+  @media screen and (max-width: 1024px) { 
+
+	.footer-links {
+	  flex-direction: column;
+	  align-items: center;
+	}
+
+	.footer-links .social-btn {
+		margin: 1em 0;
+	}
+  
+  }
+  
+  
 
   :root {
 	--color-primary: #ee75d2;
