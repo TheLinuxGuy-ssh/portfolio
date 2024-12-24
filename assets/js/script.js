@@ -267,8 +267,8 @@ let tl = gsap.timeline({
 
     smoothChildTiming: true
   });
-  gsap.set(".revolutionising", { x: '-50%' });  // Set initial position for element1
-gsap.set(".server", { x: '50%' });  // Set initial position for element2
+  gsap.set(".revolutionising", { x: '-20%' });  // Set initial position for element1
+gsap.set(".server", { x: '40%' });  // Set initial position for element2
 
   
   tl.to(".revolutionising", { 
