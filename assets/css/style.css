@@ -165,7 +165,7 @@ span {
 }
 .header .navbar .nav-item,
 .header .navbar .nav-item .nav-link {
-		padding: 3vw 2vw !important;
+		padding: 1vw 2vw !important;
 		border-radius: 0.5em;
 }
 .header .navbar .nav-item {
