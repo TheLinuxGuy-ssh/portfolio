@@ -78,37 +78,6 @@ class TextScramble {
 
 
 
-  const header = document.querySelector(".header")
-  const head = document.querySelector("#logo")
-const pod = document.querySelector(".pod")
-const scrollChange = 1
-const globe = 350
-const add_class_on_scroll = () => header.classList.add("scrolled")
-const add_class_on_scrol = () => head.classList.add("scrolled")
-const remove_class_on_scrol = () => head.classList.remove("scrolled")
-const remove_class_on_scroll = () => header.classList.remove("scrolled")
-
-window.addEventListener('scroll', function() { 
-  scrollpos = window.scrollY;
-
-  if (scrollpos >= scrollChange) { add_class_on_scroll(), add_class_on_scrol() }
-  else { remove_class_on_scroll(), remove_class_on_scrol() }
-})
-
-$(function() {
-  var text = $(".text");
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 200) {
-      text.removeClass("hidden");
-    } else {
-      text.addClass("hidden");
-    }
-  });
-});
-
-
 
 const commands = String.raw`samurai@internal-cdprojektred.com/:~ cd HAX
 samurai@internal-cdprojektred.com/HAX/:~ ls`;
@@ -282,7 +251,7 @@ gsap.set(".server", { x: '40%' });  // Set initial position for element2
       trigger: ".hero",
       scrub: 1,
       end: "200%",
-      start: "top top"
+      start: "top bottom"
     },
     smoothChildTiming: true
   });
@@ -365,4 +334,71 @@ window.addEventListener("scroll", () => {
   
   // optionally return a cleanup function
   return () => console.log("cleanup");
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all .nav-item elements
+  const navItems = document.querySelectorAll('.nav-item');
+  // Helper function to add/remove a class to a sibling at a given offset
+  const toggleSiblingClass = (items, index, offset, className, add) => {
+    const sibling = items[index + offset];
+    if (sibling) {
+      sibling.classList.toggle(className, add);
+    }
+  };
+  // Event listeners to toggle classes on hover
+  navItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      item.classList.add('hover'); // Add .hover to current item
+      // Toggle classes for siblings
+      toggleSiblingClass(navItems, index, -1, 'sibling-close', true); // Previous sibling
+      toggleSiblingClass(navItems, index, 1, 'sibling-close', true);  // Next sibling
+      toggleSiblingClass(navItems, index, -2, 'sibling-far', true);   // Previous-previous sibling
+      toggleSiblingClass(navItems, index, 2, 'sibling-far', true);    // Next-next sibling
+    });
+    item.addEventListener('mouseleave', () => {
+      item.classList.remove('hover'); // Remove .hover from current item
+      // Toggle classes for siblings
+      toggleSiblingClass(navItems, index, -1, 'sibling-close', false); // Previous sibling
+      toggleSiblingClass(navItems, index, 1, 'sibling-close', false);  // Next sibling
+      toggleSiblingClass(navItems, index, -2, 'sibling-far', false);   // Previous-previous sibling
+      toggleSiblingClass(navItems, index, 2, 'sibling-far', false);    // Next-next sibling
+    });
+  });
+});
+
+
+
+
+
+
+const header = document.querySelector(".nav-wrap")
+const head = document.querySelector("#logo")
+const pod = document.querySelector(".pod")
+const scrollChange = 1
+const globe = 350
+const add_class_on_scroll = () => header.classList.add("scrolled")
+const add_class_on_scrol = () => head.classList.add("scrolled")
+const remove_class_on_scrol = () => head.classList.remove("scrolled")
+const remove_class_on_scroll = () => header.classList.remove("scrolled")
+
+window.addEventListener('scroll', function() { 
+scrollpos = window.scrollY;
+
+if (scrollpos >= scrollChange) { add_class_on_scroll(), add_class_on_scrol() }
+else { remove_class_on_scroll(), remove_class_on_scrol() }
+})
+
+$(function() {
+var text = $(".text");
+$(window).scroll(function() {
+  var scroll = $(window).scrollTop();
+
+  if (scroll >= 200) {
+    text.removeClass("hidden");
+  } else {
+    text.addClass("hidden");
+  }
+});
 });
