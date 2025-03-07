@@ -1072,7 +1072,8 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
   
 
   .footer {
-	width: 90%;
+	height: 80vh;
+	width: 95%;
 	margin: 5%;
   }
   .footer * {
