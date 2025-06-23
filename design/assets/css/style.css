@@ -1,0 +1,542 @@
+@import url("https://fonts.cdnfonts.com/css/thegoodmonolith");
+
+@font-face {
+  src: url("https://fonts.cdnfonts.com/css/pp-neue-montreal") format("woff2");
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: 400;
+}
+
+:root {
+  --spacing-base: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --color-text: #ffffff;
+  --color-text-dim: 0.6;
+  --transition-medium: 0.3s ease;
+  --font-size-base: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: "PP Neue Montreal", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Animated noise effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent
+    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background-size: 300px 300px;
+  animation: noise-animation 0.3s steps(5) infinite;
+  opacity: 0.9;
+  will-change: transform;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes noise-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-2%, -3%);
+  }
+
+  20% {
+    transform: translate(-4%, 2%);
+  }
+
+  30% {
+    transform: translate(2%, -4%);
+  }
+
+  40% {
+    transform: translate(-2%, 5%);
+  }
+
+  50% {
+    transform: translate(-4%, 2%);
+  }
+
+  60% {
+    transform: translate(3%, 0);
+  }
+
+  70% {
+    transform: translate(0, 3%);
+  }
+
+  80% {
+    transform: translate(-3%, 0);
+  }
+
+  90% {
+    transform: translate(2%, 2%);
+  }
+
+  100% {
+    transform: translate(1%, 0);
+  }
+}
+
+.coordinates-section {
+  grid-column: 1 / span 3;
+  font-family: "TheGoodMonolith", monospace;
+}
+
+/* Key hint styling */
+.key-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+  font-size: 12px;
+  margin: 0 3px;
+  min-width: 20px;
+  height: 20px;
+}
+
+/* Footer text styling */
+.footer p {
+  font-family: "TheGoodMonolith", monospace;
+}
+
+/* Global link styling */
+a {
+  position: relative;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 0;
+  display: inline-block;
+  z-index: 1;
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  opacity: 1;
+  transition: color var(--transition-medium);
+  font-weight: 700;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-text);
+  z-index: -1;
+  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+a:hover::after,
+.links span:hover::after {
+  width: 100%;
+}
+
+a:hover,
+.links span:hover {
+  color: black;
+  mix-blend-mode: difference;
+  opacity: 1;
+}
+
+p {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style: none;
+}
+
+h3 {
+  font-size: 14px;
+  margin-bottom: var(--spacing-base);
+  font-weight: 600;
+}
+
+/* Header and Footer */
+.header,
+.footer {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  padding: 1.5rem;
+  z-index: 10000;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--spacing-base);
+}
+
+.header {
+  top: 0;
+}
+
+.footer {
+  bottom: 0;
+}
+
+/* Grid column assignments */
+.nav-section {
+  grid-column: 1 / span 3;
+}
+
+.values-section {
+  grid-column: 5 / span 2;
+}
+
+.location-section {
+  grid-column: 7 / span 2;
+}
+
+.contact-section {
+  grid-column: 9 / span 2;
+}
+
+.social-section {
+  grid-column: 11 / span 2;
+  text-align: right;
+}
+
+/* Bottom bar */
+.coordinates-section {
+  grid-column: 1 / span 3;
+}
+
+.links-section {
+  grid-column: 5 / span 4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-base);
+}
+
+.info-section {
+  grid-column: 9 / span 4;
+  text-align: right;
+}
+
+/* ===== LOGO COMPONENT ===== */
+.logo-container {
+  margin-bottom: var(--spacing-md);
+  display: block;
+  width: 3rem;
+  height: 1.5rem;
+  position: relative;
+}
+
+.logo-circles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  transition: transform var(--transition-medium);
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: var(--color-text);
+  top: 50%;
+}
+
+.circle-1 {
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.circle-2 {
+  left: 0.8rem;
+  transform: translate(0, -50%);
+  mix-blend-mode: exclusion;
+}
+
+.logo-container:hover .circle-1 {
+  transform: translate(-0.5rem, -50%);
+}
+
+.logo-container:hover .circle-2 {
+  transform: translate(0.5rem, -50%);
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.canvas {
+  position: absolute;
+  will-change: transform;
+}
+
+.item {
+  position: absolute;
+  overflow: hidden;
+  background-color: #000000;
+  cursor: pointer;
+  border-radius: var(--border-radius, 0px);
+}
+
+.item-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.item-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 var(--vignette-size, 0px) rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(var(--hover-scale, 1.05));
+}
+
+.item-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 2;
+}
+
+/* Project title needs to be above everything */
+.project-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10002;
+  /* Increased to be above expanded-item */
+}
+
+.project-title p {
+  position: relative;
+  height: 42px;
+  color: #ffffff;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+
+.project-title p .word {
+  position: relative;
+  display: inline-block;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 36px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  transform: translateY(0%);
+  will-change: transform;
+}
+
+.item-name {
+  font-family: "PP Neue Montreal", sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 2px;
+  position: relative;
+  overflow: hidden;
+  height: 16px;
+}
+
+.item-name .word {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+
+.item-number {
+  font-family: "TheGoodMonolith", monospace;
+  color: #888888;
+  font-size: 10px;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  height: 14px;
+}
+
+.item-number .char {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Expanded item should be above overlay but below titles and captions */
+.expanded-item {
+  position: fixed;
+  z-index: 10000;
+  /* Lower than project-title and caption-clone */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: var(--border-radius, 0px);
+}
+
+.expanded-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+  /* Below expanded-item but above other content */
+}
+
+.overlay.active {
+  pointer-events: auto;
+}
+
+/* Page vignette effect */
+.page-vignette-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  /* Below overlay */
+}
+
+.page-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 var(--page-vignette-size, 0px)
+    var(--page-vignette-color, rgba(0, 0, 0, 0.9));
+}
+
+.page-vignette-strong {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 var(--page-vignette-strong-size, 0px)
+    var(--page-vignette-strong-color, rgba(0, 0, 0, 0.95));
+}
+
+.page-vignette-extreme {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 var(--page-vignette-extreme-size, 0px)
+    var(--page-vignette-extreme-color, rgba(0, 0, 0, 1));
+}
+
+/* Tweakpane styles */
+.tp-dfwv {
+  z-index: 10000 !important;
+}
+
+/* Make sure the Tweakpane tab is visible when collapsed */
+.tp-rotv {
+  opacity: 0.5 !important;
+}
+
+.tp-rotv.tp-rotv-expanded {
+  opacity: 1 !important;
+}
+
+.tp-rotv.tp-rotv-collapsed {
+  opacity: 0.7 !important;
+}
+
+/* Caption clone needs to be above expanded item */
+.caption-clone {
+  position: fixed;
+  z-index: 10002;
+  /* Same as project-title to be above expanded-item */
+}
+
+/* Clone styles for animation */
+.caption-clone {
+  position: fixed;
+  z-index: 10001;
+}
+
+.caption-clone .item-name,
+.caption-clone .item-number {
+  overflow: hidden;
+}
+
+.main-title {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #ffffff6b;
+    backdrop-filter: blur(10px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

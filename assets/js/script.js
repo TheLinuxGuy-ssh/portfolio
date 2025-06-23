@@ -402,3 +402,10 @@ $(window).scroll(function() {
   }
 });
 });
+
+var design = document.querySelector(".designer-btn");
+var comp = document.querySelector(".transition-comp")
+design.addEventListener("click", function() {
+    comp.classList.add("transition");
+    setTimeout( function() { window.location = "./design" }, 1500 );
+})
