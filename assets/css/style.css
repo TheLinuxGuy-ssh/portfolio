@@ -376,7 +376,32 @@ Hero
   
   }
   
-  
+  .designer-block {
+	position: fixed;
+	bottom: 0rem;
+	right: 0rem;
+	font-family: Pro;
+	color: #fff;
+	text-align: center;
+	z-index: 1000000;
+	backdrop-filter: blur(20px);
+	padding: 2rem;
+	border-top-left-radius: 1rem;
+  }
+  .designer-text {
+	margin-bottom: 1.5rem;
+  }
+  .designer-btn {
+	text-align: center;
+	margin: 0 auto;
+	text-decoration: none;
+	color: #fff;
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: #7a7a7a2d;
+	border-radius: 1rem;
+	border: 1px solid #7e7e7e;
+  }
 @keyframes neonGlow {
     0% {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 22px rgba(255, 255, 255, 0.8), 0 0 40px rgba(12, 112, 112, 0.8), 0 0 60px rgba(12, 112, 112, 0.8), 0 0 80px rgba(12, 112, 112, 0.8), 0 0 100px rgba(12, 112, 112, 0.8), 0 0 140px rgba(12, 112, 112, 0.8), 0 0 200px rgba(12, 112, 112, 0.8);
